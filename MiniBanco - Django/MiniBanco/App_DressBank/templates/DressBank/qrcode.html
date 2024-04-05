@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <style>
+        body{
+            background-image: linear-gradient(to right, rgb(109, 156, 255),rgba(130, 116, 255, 0.479));
+            overflow-y: hidden;
+            overflow-x: hidden;
+        }
+        .TelaPrin{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: rgb(131, 122, 255);
+            text-align: center;
+            width: 550px;
+            height: 975px;
+            opacity: 0.8;
+        }
+        .TelaSec{
+            position: absolute;
+            top: 54%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: rgb(139, 237, 250);
+            text-align: center;
+            width: 470px;
+            height: 850px;
+        }
+        h1{
+            font-size: 35pt;
+        }
+        h2{
+            font-size: 14pt;
+            opacity: 1;
+        }
+    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Template</title>
+</head>
+<body>
+    <div class="TelaPrin">
+        <h1><!DOCTYPE html>RECEBA!!</h1>
+        <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/4PTG3Z6ehGkBFwjybzWkR8?utm_source=generator&theme=0" width="50%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+        <form action="{% url 'Operacoes' %}">
+            <button type="submit">Voltar</button>
+        </form>
+    </div>
+</body>
+</html>

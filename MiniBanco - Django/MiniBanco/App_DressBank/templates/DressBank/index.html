@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <style>
+        body{
+            background-image: linear-gradient(to right, rgb(109, 156, 255),rgba(130, 116, 255, 0.479));
+            overflow-y: hidden;
+            overflow-x: hidden;
+        }
+        .TelaPrin{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: rgb(131, 122, 255);
+            text-align: center;
+            width: 550px;
+            height: 975px;
+            opacity: 0.8;
+        }
+        .TelaSec{
+            position: absolute;
+            top: 54%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: rgb(139, 237, 250);
+            text-align: center;
+            width: 470px;
+            height: 850px;
+        }
+        h1{
+            font-size: 35pt;
+        }
+        h2{
+            font-size: 14pt;
+            opacity: 1;
+        }
+        #CPF{
+            margin-top: -20px;
+            width: 200px;
+            text-align: center;
+        }
+        #Name{
+            margin-top: -20px;
+            width: 200px;
+            text-align: center;
+        }
+        #Email{
+            margin-top: -20px;
+            width: 200px;
+            text-align: center;
+        }
+        #Senha{
+            margin-top: -20px;
+            width: 200px;
+            text-align: center;
+        }
+        #Cadastrar{
+            margin-top: 20px;
+        }
+        #Saldos{
+            margin-top: -20px;
+            width: 200px;
+            text-align: center;
+        }
+    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Template</title>
+</head>
+<body>
+    <div class="TelaPrin">
+        <h1>Cadastro!</h1>
+    <form action="{% url 'Listagem_Contas' %}" method="post">
+        {% csrf_token %}
+        <div class="TelaSec">
+            <h2 style="margin-top: 40px;">CPF:</h2>
+                <input name='cpf' type="text" maxlength="14" id="CPF" class="form-control-sm">
+            <h2 style="margin-top: 90px;">Nome Completo:</h2>
+                <input name="nome" type="text"maxlength='200' id="Name" class="form-control-sm">
+            <h2 style="margin-top: 93px;">Saldo disponivel:</h2>
+                <input name="saldo" type="text" id="Saldos" class="form-control-sm">
+            <h2 style="margin-top: 96px;">Email:</h2>
+                <input type="email" id="Email">
+            <h2 style="margin-top: 101px;">Senha:</h2>
+                <input type="password" id="Senha">
+        <br>
+        <br>
+                <button class="form-control-sm">Enviar</button>
+        </div>
+    </form>
+    </div>
+</body>
+</html>

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <style>
+        body{
+            background-image: linear-gradient(to right, rgb(109, 156, 255),rgba(130, 116, 255, 0.479));
+            overflow-y: hidden;
+            overflow-x: hidden;
+        }
+        .TelaPrin{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: rgb(131, 122, 255);
+            text-align: center;
+            width: 550px;
+            height: 975px;
+            opacity: 0.8;
+        }
+        .TelaSec{
+            position: absolute;
+            top: 54%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: rgb(139, 237, 250);
+            text-align: center;
+            width: 470px;
+            height: 850px;
+        }
+        h1{
+            font-size: 35pt;
+        }
+        h2{
+            font-size: 14pt;
+            opacity: 1;
+        }
+        .Lateral{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 20%;
+        height: 99.5vh;
+        background-image: linear-gradient(to right, rgba(99, 82, 248, 0.87), rgba(70, 155, 252, 0.582)); 
+        text-align: center;
+        }
+    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Template</title>
+</head>
+<body>
+    <div class="Lateral">
+        <div class="container">
+        <p>
+            Saldo: R$
+        {% for usuario in usuarios %}
+            <td>{{usuario.saldo}}</td>
+        {% endfor %}
+        </p>
+        <p>
+            Nome: 
+        {% for usuario in usuarios %}
+            <td>{{usuario.nome}}</td>
+        {% endfor %}
+        </p>
+        <p>
+            CPF: 
+        {% for usuario in usuarios %}
+            <td>{{usuario.cpf}}</td>
+        {% endfor %}
+        </p>
+        <p>
+            Número da conta: 
+        {% for usuario in usuarios %}
+            <td>{{usuario.NdaConta}}</td>
+        {% endfor %}
+        </p>
+        </div>
+        <div>
+            <form action="{% url 'Operacoes' %}">
+    
+                <button>Pix</button>
+            </form>
+        </div>
+        <br>
+        <br>
+        <form action="{% url 'deletar_dados' %}">
+            {% csrf_token %}
+            <button type="submit">Voltar ao inicio e registrar outra conta</button>
+        </form>
+    </div>
+</body>
+</html>

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <style>
+        body{
+            background-image: linear-gradient(to right, rgb(109, 156, 255),rgba(130, 116, 255, 0.479));
+            overflow-y: visible;
+            overflow-x: hidden;
+        }
+        .TelaPrin{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: rgb(131, 122, 255);
+            text-align: center;
+            width: 550px;
+            height: 975px;
+            opacity: 0.8;
+        }
+        .TelaSec{
+            position: absolute;
+            top: 54%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: rgb(139, 237, 250);
+            text-align: center;
+            width: 470px;
+            height: 850px;
+        }
+        h1{
+            font-size: 35pt;
+        }
+        h2{
+            font-size: 14pt;
+            opacity: 1;
+        }
+        #Origem{
+            margin-top: -20px;
+            width: 200px;
+            text-align: center;
+        }
+        #DiaPag{
+            margin-top: -20px;
+            width: 200px;
+            text-align: center;
+        }
+        #Hora{
+            margin-top: -20px;
+            width: 200px;
+            text-align: center;
+        }
+        #Destino{
+            margin-top: -20px;
+            width: 200px;
+            text-align: center;
+        }
+        #Cadastrar{
+            margin-top: 20px;
+        }
+    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Template</title>
+</head>
+<body>
+    <div class="TelaPrin">
+        <h1>Operações!</h1>
+    <form action="{% url 'Listagem_Pix' %}" method="post">
+        {% csrf_token %}
+            <h2 style="margin-top: 40px;">Origem do pagamento:</h2>
+                <input name='origem' type="text" id="Origem" class="form-control-sm">
+            <h2 style="margin-top: 40px;">Dia do pagamento:</h2>
+                <input name='dia' type="date" id="DiaPag" class="form-control-sm">
+            <h2 style="margin-top: 40px;">Hora do pagamento:</h2>
+                <input name='hora' type="time" id="Hora" class="form-control-sm">
+            <h2 style="margin-top: 40px;">Destino:</h2>
+                <input name='destinovalor' type="number" id="Destino" class="form-control-sm">
+        <br>
+        <br>
+            <button class="form-control-sm">Enviar</button>
+            <br>
+    </form>
+    <form action="{% url 'Operacoes' %}">
+        <button type="submit">Voltar</button>
+    </form>
+    </div>
+</body>
+</html>
